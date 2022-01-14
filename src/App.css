@@ -1,3 +1,8 @@
 .App {
   margin: 1%;
 }
+
+.munro-container {
+  display: flex;
+  justify-content: space-between;
+}
