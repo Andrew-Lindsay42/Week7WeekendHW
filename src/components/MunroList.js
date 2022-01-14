@@ -1,13 +1,15 @@
 import React from 'react';
 import Munro from './Munro';
 
-const MunroList = function (){
+const MunroList = function ({allMunros}){
+
+    const MunroItems = allMunros.map((munro, index) => {
+        return <Munro munro = {munro} key = {index}/>
+    })
+
     return(
         <div className='munro-list'>
-            <h3>Hello from MunroList</h3>
-            <Munro/>
-            <Munro/>
-            <Munro/>
+            {MunroItems}
         </div>
 
     );

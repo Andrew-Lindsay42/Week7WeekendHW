@@ -1,9 +1,10 @@
 import React from 'react';
 
-const Munro = function (){
+const Munro = function ({munro}){
     return (
         <>
-            <h4>Hello from a Munro</h4>
+            <h4>{munro.name}</h4>
+            <p>{munro.region}</p>
         </>
     );
 };
