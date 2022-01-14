@@ -6,3 +6,8 @@
   display: flex;
   justify-content: space-between;
 }
+
+.munro-details {
+  position: fixed;
+  right: 0.5%;
+}

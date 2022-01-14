@@ -6,6 +6,10 @@ const Munro = function ({munro, munroSelected}){
         munroSelected(munro);
     };
 
+    if (munro.region === 'Deeside to Speyside - The Cairngorms'){
+        munro.region = 'The Cairngorms'
+    }
+
     return (
         <>
             <h4 onClick={handleClick}>{munro.name}</h4>
