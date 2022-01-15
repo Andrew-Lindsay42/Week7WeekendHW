@@ -16,3 +16,12 @@
   right: 1%;
   width:40%;
 }
+
+.munro-weather > ul {
+  padding:0;
+  line-height: 1.5;
+}
+
+.munro-weather > ul > li {
+  list-style: none;
+}
