@@ -8,7 +8,7 @@ const MunroContainer = function (){
     const [allMunros, setAllMunros] = useState([]);
     const [selectedMunro, setSelectedMunro] = useState(null);
     const [munroWeather, setMunroWeather] = useState(null);
-    const [filter, setFilter] = useState('');
+    const [filter, setFilter] = useState({text: '', region: ''});
 
     useEffect(() => {
         getAllMunros()
@@ -64,12 +64,16 @@ const MunroContainer = function (){
         setMunroWeather(details);
     }
 
+    const checkFilter = (munro) => {
+        return ((munro.name.toUpperCase().includes(filter.text.toUpperCase())) && (munro.region.includes(filter.region)))
+    }
+
     return (
         <>
         <h2>Munro Weather</h2>
-        <FilterBox setFilter={setFilter}/>
+        <FilterBox filter={filter} setFilter={setFilter}/>
         <div className='munro-container'>
-            <MunroList allMunros = {allMunros} munroSelected = {munroSelected} filter = {filter}/>
+            <MunroList allMunros = {allMunros} munroSelected = {munroSelected} checkFilter = {checkFilter}/>
             <MunroDetails selectedMunro = {selectedMunro} munroWeather={munroWeather}/>
         </div>
         </>

@@ -6,7 +6,6 @@ const MunroDetails = function ({selectedMunro, munroWeather}){
 
         const weatherInfo = munroWeather.map((munro, index) => {   
             return <div className='munro-weather-item' key={index}>
-            {console.log(munro.icon)}
                 <div className='weather-date'>{munro.date}</div>
                 <div className='weather-temp'>{munro.temp}&#8451;</div>
                 <div className='weather-icon'><i className={munro.icon}/></div>

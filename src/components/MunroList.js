@@ -1,10 +1,10 @@
 import React from 'react';
 import Munro from './Munro';
 
-const MunroList = function ({allMunros, munroSelected, filter}){
+const MunroList = function ({allMunros, munroSelected, checkFilter}){
 
     const MunroItems = allMunros.map((munro, index) => {
-        if (munro.name.toUpperCase().includes(filter.toUpperCase())) {
+        if (checkFilter(munro)) {
         return <Munro munro = {munro} key = {index} munroSelected = {munroSelected}/>
     }})
 
@@ -12,7 +12,6 @@ const MunroList = function ({allMunros, munroSelected, filter}){
         <div className='munro-list'>
             {MunroItems}
         </div>
-
     );
 };
 
