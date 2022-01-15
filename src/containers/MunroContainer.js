@@ -74,7 +74,7 @@ const MunroContainer = function (){
         <FilterBox filter={filter} setFilter={setFilter}/>
         <div className='munro-container'>
             <MunroList allMunros = {allMunros} munroSelected = {munroSelected} checkFilter = {checkFilter}/>
-            <MunroDetails selectedMunro = {selectedMunro} munroWeather={munroWeather}/>
+            <MunroDetails selectedMunro = {selectedMunro} munroWeather={munroWeather} setSelectedMunro={setSelectedMunro}/>
         </div>
         </>
     );

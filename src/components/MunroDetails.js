@@ -1,6 +1,10 @@
 import React from 'react';
 
-const MunroDetails = function ({selectedMunro, munroWeather}){
+const MunroDetails = function ({selectedMunro, munroWeather, setSelectedMunro}){
+
+    const handleClick = () => {
+        setSelectedMunro(null);
+    };
 
     if (selectedMunro !== null && munroWeather !== null){
 
@@ -16,6 +20,7 @@ const MunroDetails = function ({selectedMunro, munroWeather}){
         return (
             <>
             <div className='selected-munro'>
+            <i onClick={handleClick} className='far fa-times-circle'/>
             <div className='munro-details'>
                 <h4>{selectedMunro.name}</h4>
                 <p>Region: {selectedMunro.region}</p>
