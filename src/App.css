@@ -14,14 +14,43 @@
 .selected-munro {
   position: fixed;
   right: 1%;
-  width:40%;
+  width:45%;
+  border: 1px solid;
+  padding: 0% 1% 1%;
 }
 
-.munro-weather > ul {
-  padding:0;
-  line-height: 1.5;
+.munro-weather {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  
 }
 
-.munro-weather > ul > li {
-  list-style: none;
+.munro-weather-item {
+  border: 1px solid;
+  margin: 1%;
+  display: grid;
+  grid-template-areas: 
+    'date date'
+    'temp icon'
+    'desc desc';
+  width: 25%;
+  justify-content: center;
+  text-align: center;
+  line-height: 200%;
+}
+
+.weather-date {
+  grid-area: date;
+  font-weight: 700;
+
+}
+.weather-temp {
+  grid-area: temp;
+}
+.weather-icon {
+  grid-area: icon;
+}
+.weather-desc {
+  grid-area: desc;
 }

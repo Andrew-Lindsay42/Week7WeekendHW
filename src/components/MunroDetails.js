@@ -5,7 +5,13 @@ const MunroDetails = function ({selectedMunro, munroWeather}){
     if (selectedMunro !== null && munroWeather !== null){
 
         const weatherInfo = munroWeather.map((munro, index) => {   
-            return <li key={index}>{munro.date} Temp: {munro.temp}&#8451; Description: {munro.description}<br/></li>
+            return <div className='munro-weather-item' key={index}>
+            {console.log(munro.icon)}
+                <div className='weather-date'>{munro.date}</div>
+                <div className='weather-temp'>{munro.temp}&#8451;</div>
+                <div className='weather-icon'><i className={munro.icon}/></div>
+                <div className='weather-desc'>{munro.description}</div>
+            </div>
         })
         
         return (
@@ -13,14 +19,14 @@ const MunroDetails = function ({selectedMunro, munroWeather}){
             <div className='selected-munro'>
             <div className='munro-details'>
                 <h4>{selectedMunro.name}</h4>
-                <h5>{selectedMunro.region}</h5>
-                <p>Name: {selectedMunro.meaning}</p>
+                <p>Region: {selectedMunro.region}</p>
+                <p>Gaelic Meaning: {selectedMunro.meaning}</p>
                 <p>Height: {selectedMunro.height}m</p>
             </div>
             <div className='munro-weather'>
-                <ul>
+                <>
                 {weatherInfo}
-                </ul>
+                </>
             </div>
             </div>
             </>

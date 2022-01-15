@@ -28,7 +28,6 @@ const MunroContainer = function (){
     };
 
     const weatherDetails = (munroWeather) => {
-
         const beautifyDate = (date) => {
             let month = date.slice(-14, -12)
             let day = date.slice(-11, -9)
@@ -37,21 +36,37 @@ const MunroContainer = function (){
             return (`${day}/${month} ${time}`)
         }
 
+        const setIcon = (icon) => {
+
+            if (icon < 233){return icon = 'fas fa-poo-storm'};
+            if (icon < 311) {return icon = 'fas fa-cloud-sun-rain'};
+            if (icon === 500) {return icon = 'fas fa-cloud-sun-rain'};
+            if (icon === 520) {return icon = 'fas fa-cloud-sun-rain'};
+            if (icon === 521) {return icon = 'fas fa-cloud-sun-rain'};
+            if (icon < 532) {return icon = 'fas fa-cloud-showers-heavy'};
+            if (icon < 623) {return icon = 'fas fa-snowflake'};
+            if (icon < 782) {return icon = 'fas fa-align-center'};
+            if (icon === 800) {return icon = 'fas fa-sun'};
+            if (icon < 803) {return icon = 'fas fa-cloud-sun'};
+            
+            return icon = 'fas fa-cloud'
+        }
+
         let details = [];
-        for (let i = 0; i < 9; i += 2) {
+        for (let i = 0; i < 7; i += 2) {
             details.push({
                 date: beautifyDate(munroWeather.list[i].dt_txt),
                 temp: (munroWeather.list[i].main.temp).toFixed(1),
+                icon: setIcon(munroWeather.list[i].weather[0].id),
                 description: ((munroWeather.list[i].weather[0].description)[0].toUpperCase() + (munroWeather.list[i].weather[0].description).substring(1))
             })
         }
         setMunroWeather(details);
-
     }
 
     return (
         <>
-        <h2>Hello from MunroContainer</h2>
+        <h2>Munro Weather</h2>
         <FilterBox setFilter={setFilter}/>
         <div className='munro-container'>
             <MunroList allMunros = {allMunros} munroSelected = {munroSelected} filter = {filter}/>
