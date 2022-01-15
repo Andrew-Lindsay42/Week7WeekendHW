@@ -7,7 +7,12 @@
   justify-content: space-between;
 }
 
-.munro-details {
+.munro-list {
+  width:40%
+}
+
+.selected-munro {
   position: fixed;
   right: 1%;
+  width:40%;
 }
