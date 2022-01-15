@@ -45,7 +45,7 @@ const MunroContainer = function (){
             if (icon === 521) {return icon = 'fas fa-cloud-sun-rain'};
             if (icon < 532) {return icon = 'fas fa-cloud-showers-heavy'};
             if (icon < 623) {return icon = 'fas fa-snowflake'};
-            if (icon < 782) {return icon = 'fas fa-align-center'};
+            if (icon < 782) {return icon = 'fas fa-smog'};
             if (icon === 800) {return icon = 'fas fa-sun'};
             if (icon < 803) {return icon = 'fas fa-cloud-sun'};
             
@@ -70,12 +70,13 @@ const MunroContainer = function (){
 
     return (
         <>
-        <h2>Munro Weather</h2>
+        <h1>Munro Weather <i className="fas fa-mountain"/> <i className="fas fa-cloud-sun-rain"/></h1>
         <FilterBox filter={filter} setFilter={setFilter}/>
         <div className='munro-container'>
             <MunroList allMunros = {allMunros} munroSelected = {munroSelected} checkFilter = {checkFilter}/>
             <MunroDetails selectedMunro = {selectedMunro} munroWeather={munroWeather} setSelectedMunro={setSelectedMunro}/>
         </div>
+        <footer>- fin -</footer>
         </>
     );
 };

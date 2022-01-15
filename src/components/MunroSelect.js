@@ -4,7 +4,7 @@ const MunroSelect = () => {
 
     return(
         <>
-            <option value="">Pick a region</option>
+            <option value="">All regions</option>
             <option value="The Cairngorms">The Cairngorms</option>
             <option value="Drumochter to Glen Shee">Drumochter to Glen Shee</option>
             <option value="Glen Carron to Loch Maree">Glen Carron to Loch Maree</option>

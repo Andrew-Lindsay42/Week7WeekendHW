@@ -11,10 +11,10 @@ const Munro = function ({munro, munroSelected}){
     }
 
     return (
-        <>
-            <h4 onClick={handleClick}>{munro.name}</h4>
+        <div className='munro-item'>
+            <h4 onClick={handleClick}>{munro.name} ({munro.height}m)</h4>
             <p>{munro.region}</p>
-        </>
+        </div>
     );
 };
 

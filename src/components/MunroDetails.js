@@ -22,7 +22,7 @@ const MunroDetails = function ({selectedMunro, munroWeather, setSelectedMunro}){
             <div className='selected-munro'>
             <i onClick={handleClick} className='far fa-times-circle'/>
             <div className='munro-details'>
-                <h4>{selectedMunro.name}</h4>
+                <h4>{selectedMunro.name}&nbsp;&nbsp;&nbsp;<i class="fas fa-map-marked-alt"></i></h4>
                 <p>Region: {selectedMunro.region}</p>
                 <p>Gaelic Meaning: {selectedMunro.meaning}</p>
                 <p>Height: {selectedMunro.height}m</p>

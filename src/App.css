@@ -3,6 +3,7 @@
 }
 
 .munro-container {
+  margin: 1%;
   display: flex;
   justify-content: space-between;
 }
@@ -10,10 +11,32 @@
 .munro-list {
   padding: 0% 1%;
   width:50%;
+  line-height: 0.3;
+}
+
+.munro-item {
+  margin-bottom: 5%;
+  padding-left: 2%;
+  border-left: 1px solid;
+}
+
+.munro-item > h4 {
+  width: fit-content;
+  cursor: pointer;
+}
+
+.munro-item > h4:hover {
+  color: steelblue;
 }
 
 .selected-munro {
-  position: fixed;
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
+  top: 1%;
+  position: sticky;
+  height:fit-content;
   right: 1%;
   width:45%;
   border: 1px solid;
@@ -25,8 +48,14 @@
   right: 0;
   padding: 1%;
 }
-.fa-times-circle:hover{
+.fa-times-circle:hover {
   color: red;
+  cursor: pointer;
+}
+
+.fa-map-marked-alt:hover{
+  color: steelblue;
+  cursor: pointer;
 }
 
 .munro-weather {
@@ -50,6 +79,10 @@
   line-height: 200%;
 }
 
+.munro-weather-item:hover {
+  background-color: rgb(228, 248, 255);
+}
+
 .weather-date {
   grid-area: date;
   font-weight: 700;
@@ -63,4 +96,8 @@
 }
 .weather-desc {
   grid-area: desc;
+}
+
+footer {
+  text-align: center;
 }
