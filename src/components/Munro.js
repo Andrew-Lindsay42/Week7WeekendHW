@@ -1,9 +1,10 @@
 import React from 'react';
 
-const Munro = function ({munro, munroSelected}){
+const Munro = function ({munro, munroSelected, setViewMap}){
 
     const handleClick = () => {
         munroSelected(munro);
+        setViewMap(false);
     };
 
     if (munro.region === 'Deeside to Speyside - The Cairngorms'){

@@ -9,6 +9,7 @@ const MunroContainer = function (){
     const [selectedMunro, setSelectedMunro] = useState(null);
     const [munroWeather, setMunroWeather] = useState(null);
     const [filter, setFilter] = useState({text: '', region: ''});
+    const [viewMap, setViewMap] = useState(false);
 
     useEffect(() => {
         getAllMunros()
@@ -73,8 +74,8 @@ const MunroContainer = function (){
         <h1>Munro Weather <i className="fas fa-mountain"/> <i className="fas fa-cloud-sun-rain"/></h1>
         <FilterBox filter={filter} setFilter={setFilter}/>
         <div className='munro-container'>
-            <MunroList allMunros = {allMunros} munroSelected = {munroSelected} checkFilter = {checkFilter}/>
-            <MunroDetails selectedMunro = {selectedMunro} munroWeather={munroWeather} setSelectedMunro={setSelectedMunro}/>
+            <MunroList allMunros = {allMunros} munroSelected = {munroSelected} checkFilter = {checkFilter} setViewMap = {setViewMap}/>
+            <MunroDetails selectedMunro = {selectedMunro} munroWeather={munroWeather} setSelectedMunro={setSelectedMunro} viewMap = {viewMap} setViewMap = {setViewMap}/>
         </div>
         <footer>- fin -</footer>
         </>
