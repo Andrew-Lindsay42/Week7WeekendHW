@@ -98,6 +98,12 @@
   grid-area: desc;
 }
 
+.leaflet-container {
+  margin: 1%;
+  width: auto;
+  height: 45vh;
+}
+
 footer {
   text-align: center;
 }

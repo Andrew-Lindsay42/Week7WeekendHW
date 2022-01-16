@@ -1,4 +1,5 @@
 import React from 'react';
+import MunroMap from './MunroMap';
 
 const MunroDetails = function ({selectedMunro, munroWeather, setSelectedMunro}){
 
@@ -31,6 +32,9 @@ const MunroDetails = function ({selectedMunro, munroWeather, setSelectedMunro}){
                 <>
                 {weatherInfo}
                 </>
+            </div>
+            <div className='munro-map'>
+                <MunroMap lat = {selectedMunro.latlng_lat} lng = {selectedMunro.latlng_lng}/>
             </div>
             </div>
             </>
